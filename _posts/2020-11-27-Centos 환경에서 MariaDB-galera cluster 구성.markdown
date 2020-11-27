@@ -2,7 +2,7 @@
 layout: post
 title: Centos 환경에서 MariaDB-galera cluster 구성
 date: 2020-11-27 15:27:23 +0900
-category: install db
+category: install   db
 ---
 
 ## 파일구조
