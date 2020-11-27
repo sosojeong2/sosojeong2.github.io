@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Centos 환경에서 HAProxy,keepalived 설치2
+title: [install]Centos 환경에서 HAProxy,keepalived 설치2
 date: 2020-11-27 15:27:23 +0900
-category: install  proxy
+category: proxy
 ---
 
 # HAProxy , Keepalived

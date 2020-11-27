@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Centos 환경에서 OracleDB rpm으로 설치
+title: [install]Centos 환경에서 OracleDB rpm으로 설치
 date: 2020-11-27 15:27:23 +0900
-category: install  db
+category: DB
 ---
 
 

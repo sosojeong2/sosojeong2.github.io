@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Rest API 사용법
+title: [spring]Rest API 사용법
 date: 2020-11-27 15:27:23 +0900
-category: install  spring
+category: spring
 ---
 
 # HttpURLConnection
