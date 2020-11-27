@@ -1,12 +1,8 @@
 ---
 layout: page
-title: soso blog
+title: SOSO Blog
 permalink: /about/
 ---
-
-### main
+> Hi~ 이건 내 일기장이야.
 ![alt text](/public/img/blog_main.jpg)
 
-
-## hi 
-> 이건 일기장이야.
