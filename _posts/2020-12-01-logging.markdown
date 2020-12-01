@@ -49,7 +49,7 @@ TRACE < DEBUG < INFO < WARN < ERROR
 5) TRACE : 추적 레벨은 Debug보다 훨씬 상세한 정보를 나타낸다. 
 
 
-> **logback-spring.xml 설정 예시**
+> **logback-spring.xml 설정 예시**  
 ```xml
 
 <?xml version="1.0" encoding="UTF-8"?>
