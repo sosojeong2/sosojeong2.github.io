@@ -3,6 +3,16 @@
 		<div class="post-title">
 			{{ page.title | escape }}
 		</div>
+		<form action="/search">
+			<div class="tipue_search_left">
+				<img src="/public/tipuesearch/search.png" class="tipue_search_icon">
+			</div>
+			<div class="tipue_search_right">
+				<input type="text" name="q" id="tipue_search_input" pattern=".{1,}" title="At least 1 characters"
+					required>
+			</div>
+			<div style="clear: both;"></div>
+		</form>
 		<time class="post-date dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
 			{%- assign date_format = site.date_forma | default: "%Y/%m/%d" -%}
 			{{ page.date | date: date_format }}
