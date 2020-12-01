@@ -96,9 +96,9 @@ TRACE < DEBUG < INFO < WARN < ERROR
 
 ```
 
-> **logger 등록 및 사용방법**
-`private static final Logger logger = LoggerFactory.getLogger(PthaInfoController.class);`   
-`logger.info("========== saveWoutData START ==========");`
+> **logger 등록 및 사용방법**   
+`private static final Logger logger = LoggerFactory.getLogger(PthaInfoController.class);`     
+`logger.info("========== saveWoutData START ==========");`  
 
 
 
