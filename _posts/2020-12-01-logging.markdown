@@ -9,10 +9,10 @@ category: springboot
 자바 오픈소스 로깅 프레임워크(SLF4J의 구현체)
 스프링부트의 기본설정, 별도 라이브러리를 추가하지 않아도 된다.
 
-> **스프링부트**  
-1) classpath에 logback-spring.xml파일이 있으면 설정파일을 읽어간다.
-2) logback-spring.xml이 없으면 .yml 파일의 설정을 읽어간다. (나는 application.yml)
-3) 둘다 있으면 .yml 설정파일을 적용 후 .xml파일이 적용된다.
+> **스프링부트**    
+1) classpath에 logback-spring.xml파일이 있으면 설정파일을 읽어간다.  
+2) logback-spring.xml이 없으면 .yml 파일의 설정을 읽어간다. (나는 application.yml)  
+3) 둘다 있으면 .yml 설정파일을 적용 후 .xml파일이 적용된다.  
 
         
 application-prod.yml 설정파일에 local, dev, prod 로 설정할 수 있다.   
