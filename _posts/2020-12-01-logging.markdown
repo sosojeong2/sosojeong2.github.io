@@ -51,7 +51,7 @@ TRACE < DEBUG < INFO < WARN < ERROR
 
 > **logback-spring.xml 설정 예시**        
 
-```xml
+```console
 	<?xml version="1.0" encoding="UTF-8"?>
 	<configuration>
 
@@ -93,7 +93,7 @@ TRACE < DEBUG < INFO < WARN < ERROR
 			</root>
 		</springProfile>
 	</configuration>
-```
+```   
 
 > **logger 등록 및 사용방법**   
 `private static final Logger logger = LoggerFactory.getLogger(PthaInfoController.class);`     
