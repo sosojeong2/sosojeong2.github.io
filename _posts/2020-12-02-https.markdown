@@ -19,9 +19,9 @@ HTTPS는 소켓 통신에서 일반 텍스트를 이용하는 대신에 SSL이�
 
 ![alt text](/public/img/https1.jpg)
 
-어휴 귀찮아...
+어휴 귀찮아...   
 
-다음에 할래
+다음에 할래  
 
 
-
+https://elfinlas.github.io/2017/11/29/springboot-https/
