@@ -7,19 +7,21 @@ category: springboot
 
 > SSL 이란  
 
-
 Secure Socket Layer 의 약자 
 웹서버와 브라우저 사이의 보안을 위해 만들어짐
 간단하게 대칭키를 이용하여 암호화 통신을 한다.
 
 > HTTPS 이란  
 
-
 Hyper Text Transfer Protocol over Secure Socket Layer 의 약자
 HTTPS는 소켓 통신에서 일반 텍스트를 이용하는 대신에 SSL이나 TLS 프로토콜을 통해 세션 데이터를 암호화 한다.
 기본 포트는 443이다. 
 
 ![alt text](/public/img/https1.jpg)
+
+어휴 귀찮아...
+
+다음에 할래
 
 
 
