@@ -32,16 +32,26 @@ Was를 이용한 단독 서버를 이용하는 경우 SSL을 적용하는 방법
 **/Severs/Tomcat/server.xml 에 수정**   
 
 ```console
+
 <Connector
   URIEncoding="UTF-8" connectionTimeout="20000" protocol="HTTP/1.1"  
-  port="443" scheme="https" secure="true" SSLEnabled="true"
+  port="8089" redirectPort="8099" 
+/>
+
+
+
+<Connector
+  URIEncoding="UTF-8" connectionTimeout="20000" 
+  port="8099" scheme="https" secure="true" SSLEnabled="true"
   keystoreFile="인증서경로/tomcat-test.jks 파일" keystorePass=".jks 패스워드"  sslProtocol="TLS"
 />
 ```
 
+tomcat서버 publish
+
 > trouble shooting  
 
-** INFO: Error parsing HTTP request header Note: further occurrences of HTTP header parsing errors will be logged at DEBUG level **   
+**INFO: Error parsing HTTP request header Note: further occurrences of HTTP header parsing errors will be logged at DEBUG level**   
 
 <Listener className="org.apache.catalina.core.AprLifecycleListener" SSLEngine="on"/>
 
