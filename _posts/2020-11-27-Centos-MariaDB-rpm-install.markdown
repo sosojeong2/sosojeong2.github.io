@@ -5,6 +5,8 @@ date: 2020-11-27 15:27:23 +0900
 category: DB
 ---
 
+# Centos 환경에서 MariaDB rpm으로 설치
+
 ## 파일구조
 
 변경가능하다
@@ -15,6 +17,9 @@ category: DB
 │   └── mysql              # mariadb data
 ...
 ```
+
+
+<br/><br/>
 
 ## MariaDB 설치에 필요한 rpm 구하기
 
@@ -48,6 +53,8 @@ category: DB
   $ rpm -Uvh galera-25.3.25-1.rhel7.el7.centos.x86_64.rpm
   $ rpm -Uvh MariaDB*
   ```
+
+<br/><br/>
 
 ## MariaDB 사용법
 

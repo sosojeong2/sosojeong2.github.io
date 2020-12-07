@@ -12,6 +12,7 @@ category: DB
 
 oracle-xe-11.2.0-1.0.x86_64.rpm.zip           
 
+<br/><br/>
    
 ## 2. 의존성 라이브러리 설치    
 ```console
@@ -19,11 +20,15 @@ $ yum install libaio bc flex unzip   --downloadonly --downloaddir=/root/oracle_l
 $ rpm -ivh *
 ```
 
+<br/><br/>
+
 ## 3. zip 파일 압축 풀기 
 ```console
 $ unzip -q oracle-xe-11.2.0-1.0.x86_64.rpm.zip
 $ cd Disk1
 ```
+
+<br/><br/>
 
 ## 4. rpm 파일 설치
 
@@ -51,18 +56,25 @@ rpm 파일 설치
 `rpm -ivh oracle-xe-11.2.0-1.0.x86_64.rpm`
 
 
+<br/><br/>
+
 ## 5. oracledb configure
 
 port번호, system계정 비밀번호 ...   
 `/etc/init.d/oracle-xe configure` 
 
+<br/><br/>
 
 ## 6. 오라클 서비스 시작
 `/etc/init.d/oracle-xe start`
 
+<br/><br/>
+
 ## 7. 방화벽 설정
 `firewall-cmd --add-port=1521/tcp --permanent`   
 `firewall-cmd --reload`
+
+<br/><br/>
 
 ## 8. /etc/profile 편집
 ```console
@@ -76,7 +88,9 @@ $ source /etc/profile
 $ init 6 
 ```
 
-## 재부팅 후 root계정으로 로그인
+<br/><br/>
+
+## 9. 재부팅 후 root계정으로 로그인
 ```cosole
 $ /etc/init.d/oracle-xe start
 

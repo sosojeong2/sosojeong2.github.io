@@ -1,14 +1,15 @@
 ---
 layout: post
-title: "[Tomcat]ssl 적용하기"
+title: "[Tomcat]keytool로 인증서 생성 후 ssl 적용"
 date: 2020-12-04 13:54:23 +0900
 category: Tomcat
 ---
  
+# keytool로 인증서 생성 후 ssl 적용
 Was를 이용한 단독 서버를 이용하는 경우 SSL을 적용하는 방법이다.  
 
 
-> 인증서를 준비한다. 
+## 인증서를 준비한다. 
 
 * `keytool -genkey -alias tomcatTest -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore keystore-test.p12 -validity 3650`  
 
@@ -27,9 +28,11 @@ Was를 이용한 단독 서버를 이용하는 경우 SSL을 적용하는 방법
 -validity   : 인증서의 유효기간이다.    
 
 
-> tomcat server.xml 수정
+<br/><br/>
 
-**/Severs/Tomcat/server.xml 에 수정**   
+## tomcat server.xml 수정
+
+/Severs/Tomcat/server.xml 에 수정
 
 ```console
 
@@ -55,6 +58,7 @@ tomcat서버 publish
 
 <Listener className="org.apache.catalina.core.AprLifecycleListener" SSLEngine="on"/>
 
+<br/><br/>
 
 * * *  
 참고   

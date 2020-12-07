@@ -5,7 +5,9 @@ date: 2020-11-27 15:27:23 +0900
 category: springboot
 ---
 
-# HttpURLConnection
+# Rest API 사용법
+
+## HttpURLConnection
 
 - HttpURLConnection 설명  
   URLConnection을 구현한 클래스로 http URL을 처리할 때 도움이 되는 추가적인 메소드를 가지고 있다.  
@@ -58,7 +60,9 @@ category: springboot
 
 ```
 
-# OKHttp
+<br/><br/>
+
+## OKHttp
 
 - OKHttp 설명  
   maven dependencies 설정 필요
@@ -93,7 +97,9 @@ category: springboot
 
 ```
 
-# RestTemplate
+<br/><br/>
+
+## RestTemplate
 
 - RestTemplate 설명  
   spring 3.0부터 지원한다.  
@@ -101,8 +107,12 @@ category: springboot
   기계적이고 반복적인 코드를 줄여준다.  
   RestTemplate는 동기처리에 사용된다. 비동기 처리에는 org.springframework.web.client.AsyncRestTemplate 를 사용해야한다.
 
+<br/><br/>
+
 - 동작원리  
   참고 사이트 : https://sjh836.tistory.com/141
+
+<br/><br/>
 
 - 사용하기(주요메소드)  
    | RestTemplate Method | Http Method | 설명                                                            |
@@ -117,6 +127,9 @@ category: springboot
    | delete              | delete      |                                                                 |
    | headForHeaders      | head        |                                                                 |
    | optionsForAllow     | option      |                                                                 |
+
+
+<br/><br/>
 
 - RestTemplate를 사용할 때 주의할 점  
   RestTemplate는 기본적으로 connection pool을 사용하지 않기 때문에 매 요청마다 handshake를 수행한다.
@@ -148,6 +161,8 @@ public class HttpConnectionConfig {
 
 }
 ```
+
+<br/><br/>
 
 - RestTemplate 사용
 

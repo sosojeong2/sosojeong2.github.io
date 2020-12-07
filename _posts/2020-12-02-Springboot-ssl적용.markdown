@@ -5,7 +5,9 @@ date: 2020-12-02 13:42:23 +0900
 category: 
 ---
 
-> HTTP & HTTPS  
+# SSL 동작방법
+
+## HTTP & HTTPS  
 
 **HTTP**   
 * 인터넷 상에서 정보를 주고 받기 위한 프로토콜  

@@ -4,6 +4,7 @@ title: "[install]Centos 환경에서 MariaDB-galera cluster 구성"
 date: 2020-11-27 15:27:23 +0900
 category: DB
 ---
+# Centos 환경에서 MariaDB-galera cluster 구성
 
 ## 파일구조
 
@@ -15,6 +16,8 @@ rpm_install/
 ├── mariadb-backup
 └── xtrabackup
 ```
+
+<br/><br/>
 
 ## galera 설치에 필요한 rpm 구하기
 
@@ -47,6 +50,8 @@ $ find / -name innobackupex
    $ rpm -Uvh percona-xtrabackup-22-2.2.13-1.el7.x86_64.rpm
    ```
 
+<br/><br/>
+
 ## mysql(mariaDB) 및 4567,4568,4444 포트 허용하기
 
 ```console
@@ -78,6 +83,8 @@ public (active)
   rich rules:
 ```
 
+<br/><br/>
+
 ## seLinux 허용모드로 설정
 
 ```console
@@ -94,6 +101,8 @@ Policy deny_unknown status:     allowed
 Max kernel policy version:      31
 
 ```
+
+<br/><br/>
 
 ## Galera Cluster 설정
 

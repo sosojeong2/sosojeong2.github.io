@@ -5,6 +5,8 @@ date: 2020-12-01 14:27:23 +0900
 category: springboot
 ---
 
+# 예외처리
+
 ## Spring에서 Exception처리하는데 3가지 방법이 있다.
 * 전역처리 Global Level using - @ControllerAdvice
 * 컨트롤러에서 처리 Controller Level using - @ExceptionHandler

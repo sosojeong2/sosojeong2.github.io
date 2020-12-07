@@ -5,7 +5,9 @@ date: 2020-12-01 15:27:23 +0900
 category: DB
 ---
 
-> 개념
+# JPA 개념 및 기본설정
+
+## 개념
 **ORM이란?**
 * ORM(Object-Relational Mapping) 객체와 관계형데이터베이스의 매핑
 * 객체가 테이블이 되도록 매핑시켜주는 프레임워크이다.
@@ -19,15 +21,18 @@ category: DB
 
 JPA Interface : 인터페이스 -> Hibernate : 구현체
 
-> JPA의 장단점
+<br/><br/>
+
+## JPA의 장단점
 신규 개발 시 신규 컬럼이 추가되어 작업할 시 CRUD SQL을 반복적으로 사용한. 
 신규 컬럼이 추가 될 때 마다 DTO,VO,Domain 등등 수정작업이 이루어져야한다.
 * 생산성이 뛰어나고 유지보수가 용이하다.
 * DBMS에 대한 종속성이 줄어든다.
-
 * 복잡한 쿼리 사용 시 복잡하다.
 
-> 예제
+<br/><br/>
+
+## 예제
 1. Dependency 추가
 org.springframework.boot:spring-boot-starter-data-jpa
 
