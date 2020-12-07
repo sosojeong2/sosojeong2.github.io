@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "SSL 동작방법"
+title: "[spring] SSL 적용 방법"
 date: 2020-12-02 13:42:23 +0900
-category: 
+category: springboot
 ---
 
-# SSL 동작방법
+# SSL 적용 방법
 
 ## HTTP & HTTPS  
 
