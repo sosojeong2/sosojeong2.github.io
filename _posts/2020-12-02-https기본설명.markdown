@@ -19,7 +19,7 @@ Hyper Text Transfer Protocol over Secure Socket Layer 의 약자
 HTTPS는 소켓 통신에서 일반 텍스트를 이용하는 대신에 SSL이나 TLS 프로토콜을 통해 세션 데이터를 암호화 한다.
 기본 포트는 443이다. 
 
-<br/><br/>
+<br/>
 
 **HTTP**   
 * 인터넷 상에서 정보를 주고 받기 위한 프로토콜  

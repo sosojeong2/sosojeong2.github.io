@@ -11,7 +11,7 @@ category: gradle
  
 이미 존재하는 프로젝트를 새로운 환경에 설치할 때 별도의 설치나 설치과정 없이 빌드할 수 있게 하기 위함이다.
 
-<br/><br/>
+<br/>
 
 ## gradlew 파일
 
@@ -20,20 +20,20 @@ category: gradle
 `./gradlew build` wrapper를 사용하면 그런 문제가 없음   
 
 
-<br/><br/>
+<br/>
 
 ## gradlew.bat 파일
 
 윈도우용 실행 배치 스크립트  
 
-<br/><br/>
+<br/>
 
 ## gradle/wrapper/gradle-wrapper.jar  
 
 wrapper 파일
 gradlew나 gradlew.bat 이 gradle task를 실행하기 때문에 로컬환경의 영향을 받지 않음
 
-<br/><br/>
+<br/>
 
 ## gradle/wrapper/gradle-wrapper.properties 파일
 
@@ -42,19 +42,19 @@ gradle wrapper 설정파일
   
 나같은 경우는 폐쇄망에서 작업했기 때문에  **distributionUrl=gradle-6.4.1-bin.zip** 로 변경하였다.  
 
-<br/><br/>
+<br/>
 
 ## build.gradle 파일
 
 의존성이나 플러그인 설정 등을 위한 스크립트 파일
 
-<br/><br/>
+<br/>
 
 ## settings.gradle 파일
 
 프로젝트의 구성정보를 기록하는 파일
 
-<br/><br/>
+<br/>
 
 ## 의존성 관리
 
@@ -74,13 +74,13 @@ task octopus(dependsOn: squid) {
 }
 ```
 
-<br/><br/>
+<br/>
 
 ## DSL 
 
 Domain-Specific Language는 특정 도메인에 특화된 비교적 작고 간단한 프로그래밍 언어
 
-<br/><br/>
+<br/>
 
 ## sourceSet (아직 잘 모르겠음...)
 
@@ -91,7 +91,7 @@ Domain-Specific Language는 특정 도메인에 특화된 비교적 작고 간�
 자바 기본 source set -> main : 실제 작동소스코드. 컴파일해서 Jar파일로 들어감, test : 단위테스트 소스코드. 컴파일해서 JUnit이나 TestNG로 실행
 
 
-<br/><br/>
+<br/>
 
 ## 빌드 자동화란?
 
@@ -100,7 +100,7 @@ Domain-Specific Language는 특정 도메인에 특화된 비교적 작고 간�
 언어마다 차이가 있지만 이런 작업들을 자동화 하는게 빌드자동화 이다.
 
 
-<br/><br/>
+<br/>
 
 ## gradle의 장점
 
@@ -122,7 +122,7 @@ gradle은 멀티 프로젝트 구성이 가능하다.
 * 유연성 + 확장성
 직적 task를 구현하고, 플러그인을 만들어서 기능을 추가할 수 있다.
 
-<br/><br/>
+<br/>
 
 * * *
 참고URL

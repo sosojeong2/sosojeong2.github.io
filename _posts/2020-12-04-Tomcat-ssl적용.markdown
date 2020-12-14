@@ -28,7 +28,7 @@ Was를 이용한 단독 서버를 이용하는 경우 SSL을 적용하는 방법
 -validity   : 인증서의 유효기간이다.    
 
 
-<br/><br/>
+<br/>
 
 ## tomcat server.xml 수정
 
@@ -58,7 +58,7 @@ tomcat서버 publish
 
 <Listener className="org.apache.catalina.core.AprLifecycleListener" SSLEngine="on"/>
 
-<br/><br/>
+<br/>
 
 * * *  
 참고   

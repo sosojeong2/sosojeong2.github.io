@@ -60,7 +60,7 @@ category: springboot
 
 ```
 
-<br/><br/>
+<br/>
 
 ## OKHttp
 
@@ -97,7 +97,7 @@ category: springboot
 
 ```
 
-<br/><br/>
+<br/>
 
 ## RestTemplate
 
@@ -107,12 +107,12 @@ category: springboot
   기계적이고 반복적인 코드를 줄여준다.  
   RestTemplate는 동기처리에 사용된다. 비동기 처리에는 org.springframework.web.client.AsyncRestTemplate 를 사용해야한다.
 
-<br/><br/>
+<br/>
 
 - 동작원리  
   참고 사이트 : https://sjh836.tistory.com/141
 
-<br/><br/>
+<br/>
 
 - 사용하기(주요메소드)  
    | RestTemplate Method | Http Method | 설명                                                            |
@@ -129,7 +129,7 @@ category: springboot
    | optionsForAllow     | option      |                                                                 |
 
 
-<br/><br/>
+<br/>
 
 - RestTemplate를 사용할 때 주의할 점  
   RestTemplate는 기본적으로 connection pool을 사용하지 않기 때문에 매 요청마다 handshake를 수행한다.
@@ -162,7 +162,7 @@ public class HttpConnectionConfig {
 }
 ```
 
-<br/><br/>
+<br/>
 
 - RestTemplate 사용
 

@@ -15,7 +15,7 @@ vm1 : 10.10.10.155
 vm2 : 10.10.10.156  
 vip : 10.10.10.157  
   
-<br/><br/>
+<br/>
 
 ## haproxy 설치 
 의존성 라이브러리, haproxy.tar 파일 다운  
@@ -39,7 +39,7 @@ vip : 10.10.10.157
     $ make USE_NS=1 USE_TFO=1 USE_OPENSSL=1 USE_ZUB=1 USE_PCRE=1 USE_LIBCRYPT=1 USE_THREAD=1 USE_SYSTEMD=1 TARGET=linux-glibc
     $ make install
   ```
-<br/><br/>
+<br/>
 
 ## keepalived 설치  
 
@@ -59,7 +59,7 @@ vip : 10.10.10.157
     $ make && make install
   ```
 
-<br/><br/>
+<br/>
 
 ## 로그 적용  
 
@@ -81,7 +81,7 @@ vip : 10.10.10.157
   $ service rsyslog restart
 ```
 
-<br/><br/>
+<br/>
 
 ## 커널값 수정  
 ```console
@@ -91,7 +91,7 @@ vip : 10.10.10.157
   net.ipv4.ip_nonlocal_bind = 1
 ```
 
-<br/><br/>
+<br/>
 
 ## 프로세스 자원 한도 설정 변경  
 ```
@@ -106,7 +106,7 @@ vip : 10.10.10.157
   $ ulimit -a 
 ```
 
-<br/><br/>
+<br/>
 
 ## VM에서 가상아이피(VIP) 세팅하기  
 VM1 : nat(enp0s3), host(enp0s8)  
@@ -126,7 +126,7 @@ VM2 : nat, host
   ---------------------------------------------------
 ```
 
-<br/><br/>
+<br/>
 
 ## haproxy config file 
 ```cfg
@@ -166,7 +166,7 @@ backend doro_dapp
 
 ```
 
-<br/><br/>
+<br/>
 
 ## keepalived config file
 ```
@@ -202,7 +202,7 @@ vrrp_instance VI_1 {
 
 ```
 
-<br/><br/>
+<br/>
 
 ## haproxy, keepalived start, stop
 > keepalived 
@@ -220,7 +220,7 @@ vrrp_instance VI_1 {
   $ kill [haproxy.pid]
   ```
 
-<br/><br/>
+<br/>
 
 ## Trouble shooting
 로그 적용할때     

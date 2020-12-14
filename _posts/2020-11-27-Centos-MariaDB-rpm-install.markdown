@@ -19,7 +19,7 @@ category: DB
 ```
 
 
-<br/><br/>
+<br/>
 
 ## MariaDB 설치에 필요한 rpm 구하기
 
@@ -54,7 +54,7 @@ category: DB
   $ rpm -Uvh MariaDB*
   ```
 
-<br/><br/>
+<br/>
 
 ## MariaDB 사용법
 

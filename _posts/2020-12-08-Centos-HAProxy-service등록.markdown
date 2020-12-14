@@ -26,7 +26,7 @@ Group=test
 WantedBy=multi-user.target
 ```
 
-<br/><br/>
+<br/>
 
 > [Unit]섹션
 
@@ -36,7 +36,7 @@ WantedBy=multi-user.target
 **After**    
 해당 유닛이 시작된 이후 나열된 유닛이 실행된다. (network와 mysqld 서비스가 실행 후 작동하게 된다.)   
 
-<br/><br/>
+<br/>
 
 > [Service]섹션   
 
@@ -62,13 +62,13 @@ WantedBy=multi-user.target
 **ExecStop**    
 중지 명령어(스크립트)를 선언한다.
 
-<br/><br/>
+<br/>
 
 > [Install]섹션
 
 systemctl enable 명령어로 유닛을 등록할 때 필요한 유닛을 지정한다. 해당 유닛을 등록하기위한 종속성 검사 단계로 보면된다.    
 
-<br/><br/>
+<br/>
 
 > 생성된 서비스를 아래 명령어로 등록 및 시작
 
@@ -79,7 +79,7 @@ systemctl start haproxy.service
 systemctl status haproxy.service
 ```
 
-<br/><br/>
+<br/>
 
 * * *
 참고URL   

@@ -17,7 +17,7 @@ rpm_install/
 └── xtrabackup
 ```
 
-<br/><br/>
+<br/>
 
 ## galera 설치에 필요한 rpm 구하기
 
@@ -50,7 +50,7 @@ $ find / -name innobackupex
    $ rpm -Uvh percona-xtrabackup-22-2.2.13-1.el7.x86_64.rpm
    ```
 
-<br/><br/>
+<br/>
 
 ## mysql(mariaDB) 및 4567,4568,4444 포트 허용하기
 
@@ -83,7 +83,7 @@ public (active)
   rich rules:
 ```
 
-<br/><br/>
+<br/>
 
 ## seLinux 허용모드로 설정
 
@@ -102,7 +102,7 @@ Max kernel policy version:      31
 
 ```
 
-<br/><br/>
+<br/>
 
 ## Galera Cluster 설정
 

@@ -21,7 +21,7 @@ category: DB
 
 JPA Interface : 인터페이스 -> Hibernate : 구현체
 
-<br/><br/>
+<br/>
 
 ## JPA의 장단점
 신규 개발 시 신규 컬럼이 추가되어 작업할 시 CRUD SQL을 반복적으로 사용한. 
@@ -30,7 +30,7 @@ JPA Interface : 인터페이스 -> Hibernate : 구현체
 * DBMS에 대한 종속성이 줄어든다.
 * 복잡한 쿼리 사용 시 복잡하다.
 
-<br/><br/>
+<br/>
 
 ## 예제
 1. Dependency 추가
