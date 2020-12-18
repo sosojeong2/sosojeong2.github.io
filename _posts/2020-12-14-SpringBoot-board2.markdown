@@ -7,13 +7,41 @@ category: 게시판만들기
 
 # 게시판만들기 - curl구현
 
-## create
+## Service 
+```java
 
+    // 게시글 등록
+    public String boardRegister(BoardDto dto) {
+        dao.register(dto);
+        return dao.latelyId();
 
-## read
+    }
 
+    // 게시글 전체 조회
+    public List<BoardDto> boardQuery(Criteria cri) {
+        List<BoardDto> response = dao.query(cri);
+        return response;
+    }
 
-## update
+    // 게시글 상세보기 조회
+    public BoardDto boardDetail(String id) {
+        BoardDto response = dao.detail(id);
+        return response;
+    }
 
+    // 조회수 증가
+    public void plusViews(String id) {
+        dao.plusViews(id);
+    }
 
-## delete
+    // 게시글 수정
+    public void boardUpdate(BoardDto dto) {
+        dao.update(dto);
+    }
+
+    // 게시글 삭제
+    public void boardDelete(String id) {
+        dao.delete(id);
+    }
+
+```
