@@ -2,7 +2,7 @@
 layout: post
 title: "[javascript]Ajax통신"
 date: 2021-03-17 09:32:23 +0900
-category: DB
+category: javascript
 ---
 
 # [javascript]Ajax통신
