@@ -2,7 +2,7 @@
 layout: post
 title: "[Board]게시판만들기-환경설정,폴더구조"
 date: 2020-12-14 14:37:23 +0900
-category: board
+category: board_project
 ---
 
 # 게시판 만들기 - 환경설정
