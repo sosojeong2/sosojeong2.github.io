@@ -15,6 +15,8 @@ category: maven
 
 ![./maven_image_file/maven_build1.png](./maven_image_file/maven_build1.png)
 
+![alt text](/public/img/maven_image_file/maven_build1.png)
+
 참고 URL : 
 
 [Maven Lifecycle](http://wiki.gurubee.net/display/SWDEV/Maven+Lifecycle)
