@@ -13,7 +13,7 @@ category: maven
 - 각 Lifecycle은 순서를 갖는 단계(phase)로 구성된다.
 - Maven의 기본 Lifecycle을 이해하려면 Phase와 Goal의 개념을 이해해야 한다.
 
-![%5BMaven%5DMaven(package)%20Build%20c7abb0541eb44769ad586664472214a6/Untitled.png](%5BMaven%5DMaven(package)%20Build%20c7abb0541eb44769ad586664472214a6/Untitled.png)
+![[Maven]Maven(package) Build](./[Maven]Maven(package) Build/Untitled.png)
 
 참고 URL : 
 
