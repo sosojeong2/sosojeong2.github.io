@@ -2,7 +2,7 @@
 layout: post
 title: "[spring]예외처리"
 date: 2020-12-01 14:27:23 +0900
-category: springboot
+category: spring
 ---
 
 # 예외처리

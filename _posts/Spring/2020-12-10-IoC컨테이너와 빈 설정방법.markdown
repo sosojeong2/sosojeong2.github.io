@@ -2,7 +2,7 @@
 layout: post
 title: "[Spring]IoC컨테이너와 빈 설정방법"
 date: 2020-12-10 10:57:23 +0900
-category: Springboot
+category: spring
 ---
 
 # IoC컨테이너와 빈 설정방법

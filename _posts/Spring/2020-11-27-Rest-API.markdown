@@ -2,7 +2,7 @@
 layout: post
 title: "[spring]Rest API 사용법"
 date: 2020-11-27 15:27:23 +0900
-category: springboot
+category: spring
 ---
 
 # Rest API 사용법
