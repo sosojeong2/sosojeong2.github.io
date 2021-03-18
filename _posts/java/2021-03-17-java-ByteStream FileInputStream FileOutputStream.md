@@ -7,7 +7,7 @@ category: java
 
 # [java]ByteStream : FileInputStream/FileOutputStream
 
-![bytestreamfile](./java_image_file/bytestream1.png)
+![alt text](/public/img/java_image_file/bytestream1.png)
 
 중요한 데이터,자료 들은 대부분 데이터베이스에 저장되어 있거나 파일시스템에 저장된다.
 
