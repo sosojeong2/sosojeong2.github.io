@@ -1,0 +1,192 @@
+---
+layout: post
+title: "[spring]Rest API 사용법"
+date: 2020-11-27 15:27:23 +0900
+category: springboot
+---
+
+# Rest API 사용법
+
+## HttpURLConnection
+
+- HttpURLConnection 설명  
+  URLConnection을 구현한 클래스로 http URL을 처리할 때 도움이 되는 추가적인 메소드를 가지고 있다.  
+  Stream을 처리해줘야 하는 귀찮음이 있다.  
+  jdk1.2부터 내장되어 있다.
+
+- HttpURLConnection 사용
+
+```java
+    @PostMapping("test4")
+    public void test4() {
+        try {
+
+            URL url = new URL("http://10.10.10.9:9002/test2");
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+            String josnMessage = "{ \"aaa\" : \"ddd\"}";
+            con.setConnectTimeout(5000);
+            con.setReadTimeout(5000);
+            con.addRequestProperty("x-api-key", "ddd");
+
+            con.setRequestMethod("POST");
+            con.setRequestProperty("Content-Type", "application/json");
+            con.setDoInput(true);
+            con.setDoOutput(true);
+            con.setUseCaches(false);
+            con.setDefaultUseCaches(false);
+
+            OutputStreamWriter wr = new OutputStreamWriter(con.getOutputStream());
+            wr.write(josnMessage);
+            wr.flush();
+
+            StringBuilder sb = new StringBuilder();
+            if (con.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                // Stream을 처리해줘야 하는 귀찮음이 있음.
+                BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream(), "utf-8"));
+                String line;
+                while ((line = br.readLine()) != null) {
+                    sb.append(line).append("\n");
+                }
+                br.close();
+                System.out.println("" + sb.toString());
+            } else {
+                System.out.println(con.getResponseMessage());
+            }
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+```
+
+<br/>
+
+## OKHttp
+
+- OKHttp 설명  
+  maven dependencies 설정 필요
+
+```console
+    // https://mvnrepository.com/artifact/com.squareup.okhttp/okhttp
+	compile group: 'com.squareup.okhttp', name: 'okhttp', version: '2.7.5'
+```
+
+- OKHttp 사용  
+  참고 사이트 : https://soft.plusblog.co.kr/15
+
+```java
+    @PostMapping("test3")
+    public void test3() {
+        try {
+            OkHttpClient client = new OkHttpClient();
+            String url = "http://10.10.10.9:9002/test2";
+
+            RequestBody requestBody = RequestBody.create(null, new byte[0]);
+
+            Request.Builder builder = new Request.Builder().url(url).addHeader("aaaa", "dddd").post(requestBody);
+            Request request = builder.build();
+
+            Response response = client.newCall(request).execute();
+            System.out.println(response.body().string());
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+```
+
+<br/>
+
+## RestTemplate
+
+- RestTemplate 설명  
+  spring 3.0부터 지원한다.  
+  스프링에서 제공하는 http 통신에 쓸 수 있는 템플릿이며, 통신을 단순화하고 RESTful원칙을 지킨다.  
+  기계적이고 반복적인 코드를 줄여준다.  
+  RestTemplate는 동기처리에 사용된다. 비동기 처리에는 org.springframework.web.client.AsyncRestTemplate 를 사용해야한다.
+
+<br/>
+
+- 동작원리  
+  참고 사이트 : https://sjh836.tistory.com/141
+
+<br/>
+
+- 사용하기(주요메소드)  
+   | RestTemplate Method | Http Method | 설명                                                            |
+   | ------------------- | ----------- | --------------------------------------------------------------- |
+   | execute             | any         |                                                                 |
+   | exchange            | any         | 헤더세팅해서 HTTP Method로 요청보내고 ResponseEntity로 반환받음 |
+   | getForObject        | get         | get 요청을 보내고 java object로 매핑받아서 반환받음             |
+   | getForEntity        | get         | get 요청을 보내고 ResponseEntity로 반환받음                     |
+   | postForLocation     | post        | post 요청을 보내고 java.net.URI 로 반환받음                     |
+   | postForObject       | post        | post 요청을 보내고 ResponseEntity로 반환받음                    |
+   | put                 | put         |                                                                 |
+   | delete              | delete      |                                                                 |
+   | headForHeaders      | head        |                                                                 |
+   | optionsForAllow     | option      |                                                                 |
+
+
+<br/>
+
+- RestTemplate를 사용할 때 주의할 점  
+  RestTemplate는 기본적으로 connection pool을 사용하지 않기 때문에 매 요청마다 handshake를 수행한다.
+  이를 방지하기 위해 아래 설정을 추가함으로서 Custom RestTemplate를 Bean으로 등록하여 사용할 수 있다.
+
+```java
+import org.apache.http.client.HttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
+import org.springframework.web.client.RestTemplate;
+
+@Configuration
+public class HttpConnectionConfig {
+
+    @Bean
+    public RestTemplate getCustomRestTemplate(){
+        HttpComponentsClientHttpRequestFactory httpRequestFactory = new HttpComponentsClientHttpRequestFactory();
+        httpRequestFactory.setConnectTimeout(2000);
+        httpRequestFactory.setReadTimeout(3000);
+        HttpClient httpClient = HttpClientBuilder.create()
+                .setMaxConnTotal(200)
+                .setMaxConnPerRoute(20)
+                .build();
+        httpRequestFactory.setHttpClient(httpClient);
+        return new RestTemplate(httpRequestFactory);
+    }
+
+}
+```
+
+<br/>
+
+- RestTemplate 사용
+
+```java
+@RestController
+public class SosoController {
+
+    @PostMapping("test1")
+    public void test1() {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        RestTemplate restTemplate = new RestTemplate();
+        String url = "http://10.10.10.9:9002/test2";
+        JsonObject jsonObject = new JsonObject();
+        HttpEntity<String> entity = new HttpEntity<String>(jsonObject.toString(), headers);
+        String answer = restTemplate.postForObject(url, entity, String.class);
+        System.out.println(answer);
+
+    }
+
+    @PostMapping("test2")
+    public String test2() {
+        return "test2";
+    }
+
+}
+```

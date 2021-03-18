@@ -1,0 +1,102 @@
+---
+layout: post
+title: "[DB]JPA-개념,기본설정"
+date: 2020-12-01 15:27:23 +0900
+category: DB
+---
+
+# JPA 개념 및 기본설정
+
+## 개념
+**ORM이란?**
+* ORM(Object-Relational Mapping) 객체와 관계형데이터베이스의 매핑
+* 객체가 테이블이 되도록 매핑시켜주는 프레임워크이다.
+* SQL Query가 아닌 직관적인 코드로서 데이터를 조작할 수 있다.
+
+**JPA란?**
+* JPA(Java persistence API) 자바 ORM기술에 대한 API표준 명세
+
+**Hibernate란?**
+* JPA를 사용하기 위해서 JPA를 구현한 ORM프레임워크 중 하나이다.
+
+JPA Interface : 인터페이스 -> Hibernate : 구현체
+
+<br/>
+
+## JPA의 장단점
+신규 개발 시 신규 컬럼이 추가되어 작업할 시 CRUD SQL을 반복적으로 사용한. 
+신규 컬럼이 추가 될 때 마다 DTO,VO,Domain 등등 수정작업이 이루어져야한다.
+* 생산성이 뛰어나고 유지보수가 용이하다.
+* DBMS에 대한 종속성이 줄어든다.
+* 복잡한 쿼리 사용 시 복잡하다.
+
+<br/>
+
+## 예제
+1. Dependency 추가
+org.springframework.boot:spring-boot-starter-data-jpa
+
+2. Entity 클래스 생성
+@Entity가 붙은 클래스는 JPA가 관리하는 클래스이다. 
+@id 를 사용하여 기본키(PK)를 지정한다. (필수)
+
+```java
+
+@NoArgsConstructor
+@Getter
+@Entity
+@Table(name = "CHECKPOINT")
+public class CheckPoint extends BaseTimeEntity {
+
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "CHECKPOINT_ID", nullable = false)
+  private Long id; 
+
+  @Column(name = "BLOCK_NUMBER", nullable = false)
+  private Long blockNumber; 
+
+}
+```
+
+3. Repository 클래스 
+JPA에서는 단순히 Repository 인터페이스를 생성한 후 JpaRepository<Entitiy, 기본키 타입>을 상속받으면 기본적으로 CRUD가 자동으로 생성된다.
+
+```java
+package kr.co.ex.domain.checkpoint;
+
+import java.util.Optional;
+import java.util.Set;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+public interface CheckPointRepository extends JpaRepository<CheckPoint, Long> {
+  Optional<CheckPoint> findByTxId(String txId);
+  
+  @Query("select max(c.blockNumber) from CheckPoint c")
+  Long getMaxBlockNumber(); 
+
+  @Query("select c.txId from CheckPoint c where c.blockNumber = :blockNumber")
+  Set<String> findByBlockNumber(@Param("blockNumber") Long blockNumber);
+
+}
+```
+
+4. properties. 설정 (application.yml) 
+```yml
+  #JPA 설정
+  jpa:
+    open-in-view: true
+    show-sql: false
+    mapping-resources:
+      - META-INF/ormJobInfo.xml
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        format_sql: true
+```
