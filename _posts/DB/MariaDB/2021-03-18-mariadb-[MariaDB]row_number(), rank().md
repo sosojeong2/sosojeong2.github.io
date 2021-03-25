@@ -7,6 +7,8 @@ category: DB
 
 # [MariaDB]row_number(), rank()
 
+v10.2 이상 버전부터 사용 가능하다. 
+
 - row_number()
 
 페이징 기능에 꼭 필요한 기능은 쿼리실행 결과에 행마다 순번을 매겨주는 rownum일 것이다. 
