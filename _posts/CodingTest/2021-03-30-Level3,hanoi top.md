@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Level3, hanoi top"
-date: 2021-03-20 17:15:23 +0900
+date: 2021-03-30 17:15:23 +0900
 category: CodingTest
 ---
 
